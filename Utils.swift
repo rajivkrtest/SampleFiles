@@ -1,6 +1,5 @@
 //
 //  Utils.swift
-//  Orient
 //
 //  Created by Apple on 10/30/17.
 //  Copyright © 2017 Apple. All rights reserved.
@@ -303,16 +302,15 @@ extension UISegmentedControl {
         self.layer.borderWidth = 0.8
         self.layer.borderColor = UIColor.init(red: 0.85, green: 0.85, blue: 0.85, alpha: 1.0).cgColor
         
-        let font = UIFont(name: AppFontName.bold, size: 14)
+        let font = UIFont.systemFont(ofSize: 14)
         let normalAttributes: NSDictionary = [
             NSAttributedStringKey.foregroundColor: UIColor.darkGray,
-            NSAttributedStringKey.font: font!
+            NSAttributedStringKey.font: font
         ]
         let selectedAttributes: NSDictionary = [
             NSAttributedStringKey.foregroundColor: UIColor.black,
-            NSAttributedStringKey.font: font!
-        ]
-        
+            NSAttributedStringKey.font: font
+        ]        
         setTitleTextAttributes(selectedAttributes as [NSObject : AnyObject], for: UIControlState.selected)
         setTitleTextAttributes(normalAttributes as [NSObject : AnyObject], for: UIControlState.normal)
     }
@@ -577,11 +575,11 @@ extension UITextView {
     }
     
     func showErrorToolTip(message: String, title: String? = nil) -> Void {
-        let popTip = UIToolTip(title: title, message: message)
-        popTip.popColor = UIColor.red
-        popTip.titleColor = UIColor.white
-        popTip.textColor = UIColor.white
-        popTip.presentAnimatedPointingAtView(self, inView: self.superview!, autodismissAtTime: 1.5)
+//        let popTip = UIToolTip(title: title, message: message)
+//        popTip.popColor = UIColor.red
+//        popTip.titleColor = UIColor.white
+//        popTip.textColor = UIColor.white
+//        popTip.presentAnimatedPointingAtView(self, inView: self.superview!, autodismissAtTime: 1.5)
     }
     
 }
