@@ -89,7 +89,7 @@ class RootViewController: UIViewController {
     @objc func actionMenuTap(sender: Any) -> Void {
         print("actionMenuTap")
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        appDelegate.loadOnboardingController()
+//        appDelegate.loadOnboardingController()
     }
     
     @objc func actionHeaderTap(sender: Any) -> Void {
