@@ -25,26 +25,6 @@ class MenuTableViewCell: UITableViewCell {
     
 }
 
-
-class ImageHeaderView : UIView {
-    
-    @IBOutlet weak var profileImage : UIImageView!
-    @IBOutlet weak var lblUserName : UILabel!
-    @IBOutlet weak var lblLastLogin : UILabel!
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        self.profileImage.layoutIfNeeded()
-        self.profileImage.layer.cornerRadius = self.profileImage.bounds.size.height / 2
-        self.profileImage.clipsToBounds = true
-        self.profileImage.layer.borderWidth = 1
-        self.profileImage.layer.borderColor = UIColor.white.cgColor
-        
-        lblUserName.text = "Gerorge Johnson"
-        lblLastLogin.text = "Last Log in: 20:45 7th Sep 2017"
-    }
-}
-
 class RightMenuItem {
     var title: NSAttributedString!
     var image: UIImage!
@@ -75,18 +55,18 @@ class MenuViewController: UIViewController, RightMenuProtocol {
     
     @IBOutlet weak var tableView: UITableView!
     
-    var menus = [RightMenuItem(title: NSAttributedString(string: "Home"), image: UIImage(named: "ico_menu_home")),
-                 RightMenuItem(title: NSAttributedString(string: "My Accounts"), image: UIImage(named: "ico_menu_myaccounts")),
-                 RightMenuItem(title: NSAttributedString(string: "Transfers & Payments"), image: UIImage(named: "ico_menu_transfers")),
-                 RightMenuItem(title: NSAttributedString(string: "My Card"), image: UIImage(named: "ico_menu_mycards")),
-                 RightMenuItem(title: NSAttributedString(string: "My Loans"), image: UIImage(named: "ico_menu_loans")),
-                 RightMenuItem(title: NSAttributedString(string: "Settings"), image: UIImage(named: "ico_menu_settings")),
-                 RightMenuItem(title: NSAttributedString(string: "Rewards"), image: UIImage(named: "ico_menu_rewards")),
-                 RightMenuItem(title: NSAttributedString(string: "Help & Support"), image: UIImage(named: "ico_menu_help")),
-                 RightMenuItem(title: NSAttributedString(string: "Sign Out"), image: UIImage(named: "ico_menu_signout")),
-                 RightMenuItem(title: NSAttributedString(string: "Strings.fastpayMenuLogo"), image: UIImage(named: "ico_menu_fastpay"))]
+    var menus = [RightMenuItem(title: NSAttributedString(string: "Home"), image: UIImage(named: "down_arrow")),
+                 RightMenuItem(title: NSAttributedString(string: "My Accounts"), image: UIImage(named: "down_arrow")),
+                 RightMenuItem(title: NSAttributedString(string: "Transfers & Payments"), image: UIImage(named: "down_arrow")),
+                 RightMenuItem(title: NSAttributedString(string: "My Card"), image: UIImage(named: "down_arrow")),
+                 RightMenuItem(title: NSAttributedString(string: "My Loans"), image: UIImage(named: "down_arrow")),
+                 RightMenuItem(title: NSAttributedString(string: "Settings"), image: UIImage(named: "down_arrow")),
+                 RightMenuItem(title: NSAttributedString(string: "Rewards"), image: UIImage(named: "down_arrow")),
+                 RightMenuItem(title: NSAttributedString(string: "Help & Support"), image: UIImage(named: "down_arrow")),
+                 RightMenuItem(title: NSAttributedString(string: "Sign Out"), image: UIImage(named: "down_arrow")),
+                 RightMenuItem(title: NSAttributedString(string: "Strings.fastpayMenuLogo"), image: UIImage(named: "down_arrow"))]
     
-    @IBOutlet weak var imageHeaderView: ImageHeaderView!
+    @IBOutlet weak var imageViewHeader: UIImageView!
     
     var mainViewController: UIViewController?
     var accountsViewController: UIViewController?
@@ -129,20 +109,6 @@ class MenuViewController: UIViewController, RightMenuProtocol {
         super.viewDidLayoutSubviews()
         self.view.layoutIfNeeded()
     }
-    
-    
-    @IBAction func actionOpenCameraController(_ sender: Any) {
-//        let controller = self.storyboard?.instantiateViewController(withIdentifier: "ProfilePictureViewController") as! UIViewController
-//        let navigationController:UINavigationController = UINavigationController(rootViewController: controller)
-//        self.present(navigationController, animated: true, completion: nil)
-//        
-//        controller.onAcceptProfilePicture { (image, error) in
-//            if (image != nil) {
-//                self.imageHeaderView.profileImage.image = image
-//            }
-//        }
-    }
-    
     
     func changeViewController(_ menu: RightMenu) {
         switch menu {

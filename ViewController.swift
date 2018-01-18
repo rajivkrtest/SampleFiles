@@ -10,10 +10,13 @@ import UIKit
 
 class ViewController: MenuRootViewController {
 
+    @IBOutlet weak var rchTextField: RCHTextField?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        rchTextField?.showError(message: "Error Message")
     }
 
     override func didReceiveMemoryWarning() {

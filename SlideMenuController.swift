@@ -22,7 +22,7 @@ import UIKit
 public struct SlideMenuOptions {
     public static var leftViewWidth: CGFloat = 270.0
     public static var leftBezelWidth: CGFloat? = 16.0
-    public static var contentViewScale: CGFloat = 1
+    public static var contentViewScale: CGFloat = 0.96
     public static var contentViewOpacity: CGFloat = 0.5
     public static var contentViewDrag: Bool = false
     public static var shadowOpacity: CGFloat = 0.0
@@ -34,7 +34,7 @@ public struct SlideMenuOptions {
     public static var rightViewWidth: CGFloat = 270.0
     public static var rightBezelWidth: CGFloat? = 16.0
     public static var rightPanFromBezel: Bool = true
-    public static var hideStatusBar: Bool = false
+    public static var hideStatusBar: Bool = true
     public static var pointOfNoReturnWidth: CGFloat = 44.0
     public static var simultaneousGestureRecognizers: Bool = true
     public static var opacityViewBackgroundColor: UIColor = UIColor.black
@@ -1048,19 +1048,8 @@ extension UIViewController {
     }
     
     public func addRightBarButtonWithImage(_ buttonImage: UIImage) {
-        
-        let btnMenu = UIButton(type: UIButtonType.system)
-        btnMenu.setImage(UIImage(named: "ico_menu"), for: .normal)
-        btnMenu.setTitleColor(Colors.title, for: .normal)
-        btnMenu.titleLabel?.font = UIFont(name: "Arial-Bold", size: 16)
-        btnMenu.setTitle("Menu", for: .normal)
-//        btnMenu.alignImageRight()
-        btnMenu.frame = CGRect.init(x: 0, y: 0, width: 70, height: 30)
-        btnMenu.addTarget(self, action: #selector(self.toggleRight), for: .touchUpInside)
-        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: btnMenu)
-        
-//        let rightButton: UIBarButtonItem = UIBarButtonItem(image: buttonImage, style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.toggleRight))
-//        navigationItem.rightBarButtonItem = rightButton
+        let rightButton: UIBarButtonItem = UIBarButtonItem(image: buttonImage, style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.toggleRight))
+        navigationItem.rightBarButtonItem = rightButton
     }
     
     @objc public func toggleLeft() {
@@ -1101,12 +1090,10 @@ class ExSlideMenuController : SlideMenuController {
     
     override func isTagetViewController() -> Bool {
         if let vc = UIApplication.topViewController() {
-//            if vc is DashboardViewController {
-            if vc is UIViewController {
-//                ||
-//                vc is SwiftViewController ||
-//                vc is JavaViewController ||
-//                vc is GoViewController {
+            if vc is ViewController ||
+                vc is OneViewController {
+//                                vc is JavaViewController ||
+                //                vc is GoViewController {
                 return true
             }
         }

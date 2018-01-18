@@ -29,13 +29,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let controller = storyBoard.instantiateViewController(withIdentifier: "LandingNavigation") as! UINavigationController
         let menuViewController = storyBoard.instantiateViewController(withIdentifier: "MenuViewController") as! MenuViewController
         menuViewController.mainViewController = controller
-        
-        let slideMenuController = ExSlideMenuController(mainViewController: controller, rightMenuViewController: menuViewController);
-        slideMenuController.automaticallyAdjustsScrollViewInsets = true
+//
+        let slideMenuController = ExSlideMenuController(mainViewController: controller, rightMenuViewController: menuViewController)
+//        slideMenuController.automaticallyAdjustsScrollViewInsets = true
         slideMenuController.delegate = dashboardViewController
         self.window?.backgroundColor = Colors.title
         self.window?.rootViewController = slideMenuController
-        
         return true
     }
 
