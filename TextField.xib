@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TextField" customModule="TDCustomButton" customModuleProvider="target">
+            <connections>
+                <outlet property="label" destination="jpF-U4-HVB" id="ouu-2s-ATQ"/>
+                <outlet property="textField" destination="w3L-Y9-buX" id="meS-Cl-nhE"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="45"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="w3L-Y9-buX">
+                    <rect key="frame" x="6" y="4" width="364" height="35"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="35" id="ZJB-Po-4jh"/>
+                    </constraints>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jpF-U4-HVB">
+                    <rect key="frame" x="6" y="40" width="364" height="0.0"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="0.77916975359999996" green="1" blue="0.58756606560000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="w3L-Y9-buX" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="4" id="6OX-pt-dzu"/>
+                <constraint firstItem="w3L-Y9-buX" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="6" id="700-mp-aUs"/>
+                <constraint firstAttribute="trailing" secondItem="jpF-U4-HVB" secondAttribute="trailing" constant="5" id="NGb-c1-PDL"/>
+                <constraint firstItem="jpF-U4-HVB" firstAttribute="top" secondItem="w3L-Y9-buX" secondAttribute="bottom" constant="1" id="Or3-K9-K83"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="jpF-U4-HVB" secondAttribute="bottom" constant="5" id="mmm-P7-jOR"/>
+                <constraint firstItem="jpF-U4-HVB" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="6" id="nqm-pT-pyO"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="w3L-Y9-buX" secondAttribute="trailing" constant="5" id="pls-qC-D2K"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="79.5" y="-178.5"/>
+        </view>
+    </objects>
+</document>

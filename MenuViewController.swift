@@ -88,15 +88,15 @@ class MenuViewController: UIViewController, RightMenuProtocol {
     
     @IBOutlet weak var imageHeaderView: ImageHeaderView!
     
-    var mainViewController: UIViewController!
-    var accountsViewController: UIViewController!
-    var transfersViewController: UIViewController!
-    var cardViewController: UIViewController!
-    var loanViewController: UIViewController!
-    var settingsViewController: UIViewController!
-    var rewardsViewController: UIViewController!
-    var helpViewController: UIViewController!
-    var fastpayViewController: UIViewController!
+    var mainViewController: UIViewController?
+    var accountsViewController: UIViewController?
+    var transfersViewController: UIViewController?
+    var cardViewController: UIViewController?
+    var loanViewController: UIViewController?
+    var settingsViewController: UIViewController?
+    var rewardsViewController: UIViewController?
+    var helpViewController: UIViewController?
+    var fastpayViewController: UIViewController?
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -104,21 +104,21 @@ class MenuViewController: UIViewController, RightMenuProtocol {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.accountsViewController = UINavigationController(rootViewController: self.storyboard?.instantiateViewController(withIdentifier: "MyAccountsViewController") as! UIViewController)
+        self.accountsViewController = UINavigationController(rootViewController: (self.storyboard?.instantiateViewController(withIdentifier: "OneViewController"))!)
         
-        self.transfersViewController = UINavigationController(rootViewController: self.storyboard?.instantiateViewController(withIdentifier: "TransfersViewController") as! UIViewController)
+        self.transfersViewController = UINavigationController(rootViewController: (self.storyboard?.instantiateViewController(withIdentifier: "OneViewController"))!)
         
-        self.cardViewController = UINavigationController(rootViewController: self.storyboard?.instantiateViewController(withIdentifier: "MyCardsViewController") as! UIViewController)
+        self.cardViewController = UINavigationController(rootViewController: (self.storyboard?.instantiateViewController(withIdentifier: "OneViewController"))!)
         
-        self.loanViewController = UINavigationController(rootViewController: self.storyboard?.instantiateViewController(withIdentifier: "MyLoansViewController") as! UIViewController)
+        self.loanViewController = UINavigationController(rootViewController: (self.storyboard?.instantiateViewController(withIdentifier: "OneViewController"))!)
         
-        self.settingsViewController = UINavigationController(rootViewController: self.storyboard?.instantiateViewController(withIdentifier: "SettingsViewController") as! UIViewController)
+        self.settingsViewController = UINavigationController(rootViewController: (self.storyboard?.instantiateViewController(withIdentifier: "OneViewController"))!)
         
-        self.rewardsViewController = UINavigationController(rootViewController: self.storyboard?.instantiateViewController(withIdentifier: "RewardsViewController") as! UIViewController)
+        self.rewardsViewController = UINavigationController(rootViewController: (self.storyboard?.instantiateViewController(withIdentifier: "OneViewController"))!)
         
-        self.helpViewController = UINavigationController(rootViewController: self.storyboard?.instantiateViewController(withIdentifier: "HelpAndSupportViewController") as! UIViewController)
+        self.helpViewController = UINavigationController(rootViewController: (self.storyboard?.instantiateViewController(withIdentifier: "OneViewController"))!)
         
-        self.fastpayViewController = UINavigationController(rootViewController: self.storyboard?.instantiateViewController(withIdentifier: "FastpayInfoViewController") as! UIViewController)
+        self.fastpayViewController = UINavigationController(rootViewController: (self.storyboard?.instantiateViewController(withIdentifier: "OneViewController"))!)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -147,28 +147,28 @@ class MenuViewController: UIViewController, RightMenuProtocol {
     func changeViewController(_ menu: RightMenu) {
         switch menu {
         case .home:
-            self.slideMenuController()?.changeMainViewController(self.mainViewController, close: true)
+            self.slideMenuController()?.changeMainViewController(self.mainViewController!, close: true)
             break
         case .accounts:
-            self.slideMenuController()?.changeMainViewController(self.accountsViewController, close: true)
+            self.slideMenuController()?.changeMainViewController(self.accountsViewController!, close: true)
             break
         case .transfers:
-            self.slideMenuController()?.changeMainViewController(self.transfersViewController, close: true)
+            self.slideMenuController()?.changeMainViewController(self.transfersViewController!, close: true)
             break
         case .cards:
-            self.slideMenuController()?.changeMainViewController(self.cardViewController, close: true)
+            self.slideMenuController()?.changeMainViewController(self.cardViewController!, close: true)
             break
         case .loan:
-            self.slideMenuController()?.changeMainViewController(self.loanViewController, close: true)
+            self.slideMenuController()?.changeMainViewController(self.loanViewController!, close: true)
             break
         case .settings:
-            self.slideMenuController()?.changeMainViewController(self.settingsViewController, close: true)
+            self.slideMenuController()?.changeMainViewController(self.settingsViewController!, close: true)
             break
         case .rewards:
-            self.slideMenuController()?.changeMainViewController(self.rewardsViewController, close: true)
+            self.slideMenuController()?.changeMainViewController(self.rewardsViewController!, close: true)
             break
         case .help:
-            self.slideMenuController()?.changeMainViewController(self.helpViewController, close: true)
+            self.slideMenuController()?.changeMainViewController(self.helpViewController!, close: true)
             break
         case .signout:
 //            AlertController.alert(UIApplication.appName, message: "Are you sure you want to sign out?", buttons: ["Cancel", "Sign Out"], tapBlock: { (action, index) in
@@ -179,7 +179,7 @@ class MenuViewController: UIViewController, RightMenuProtocol {
 //            })
             break
         case .fastpay:
-            self.slideMenuController()?.changeMainViewController(self.fastpayViewController, close: true)
+            self.slideMenuController()?.changeMainViewController(self.fastpayViewController!, close: true)
             break
         }
         

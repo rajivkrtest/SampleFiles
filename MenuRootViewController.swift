@@ -9,7 +9,7 @@ import UIKit
 
 extension UIViewController {    
     func setNavigationBarItem() {
-        self.addRightBarButtonWithImage(UIImage(named: "ico_menu")!)
+        self.addLeftBarButtonWithImage(UIImage(named: "ico_menu")!)
         self.slideMenuController()?.removeRightGestures()
         self.slideMenuController()?.addRightGestures()
     }
@@ -30,8 +30,8 @@ class MenuRootViewController: RootViewController {
         
         let button: UIButton = UIButton(type: UIButtonType.custom)
         button.frame = CGRect(x: 0, y: 0, width: 40, height: 40)
-        
-        button.setImage(UIImage(named: "headerlogo"), for: UIControlState.normal)
+        button.setTitle("Header", for: UIControlState.normal)
+//        button.setImage(UIImage(named: "headerlogo"), for: UIControlState.normal)
         button.addTarget(self, action: #selector(actionHeaderClick(sender:)), for: UIControlEvents.touchUpInside)
         self.navigationItem.titleView = button
     }
