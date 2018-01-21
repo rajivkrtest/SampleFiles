@@ -22,10 +22,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4cI-6N-ZoK" customClass="RCHTextField" customModule="SampleFiles" customModuleProvider="target">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4cI-6N-ZoK" customClass="RCHTextField" customModule="SampleFiles" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="128" width="359" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="Q6I-IT-xeu"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="Q6I-IT-xeu"/>
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>

@@ -639,7 +639,6 @@ open class SlideMenuController: UIViewController, UIGestureRecognizerDelegate {
         }
     }
     
-    
     open override func toggleLeft() {
         if isLeftOpen() {
             closeLeft()
